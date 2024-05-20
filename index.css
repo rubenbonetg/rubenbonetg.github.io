@@ -1565,7 +1565,7 @@ div.WordSection1
  </o:shapelayout></xml><![endif]-->
 </head>
 
-<body lang="ES" link="#0C0C0C" vlink="#3F3F3F" style="tab-interval:35.4pt;
+<head></head><body lang="ES" link="#0C0C0C" vlink="#3F3F3F" style="tab-interval:35.4pt;
 word-wrap:break-word">
 
 <div class="WordSection1">
@@ -1598,7 +1598,7 @@ word-wrap:break-word">
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rubén Bonet</title>
+<title>Rubén Bonet G.</title>
 <style>
     body, html {
         height: 50%;
@@ -1640,7 +1640,37 @@ word-wrap:break-word">
 
     </span></p><div class="contenedor">
         <div class="imagen-rotatoria">
-            <img src="Test%20Web_archivos/image010.png" alt="Imagen Rotatoria en 3D">
+            
+
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protección de Imagen</title>
+  <style>
+    /* Estilos para deshabilitar selección y arrastre de la imagen */
+    .protected-image {
+      user-drag: none;
+      user-select: none;
+      -webkit-user-drag: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+    }
+  </style>
+  <script>
+    // Deshabilitar el clic derecho en toda la página
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    }, false);
+  </script>
+
+
+  
+  <img src="Test%20Web_archivos/image010.png" alt="Imagen protegida" class="protected-image">
+
+
+
         </div>
     </div>
 
@@ -1703,6 +1733,15 @@ word-wrap:break-word">
 
 <p class="MsoNormal" align="center" style="text-align:center"><span class="SpellE"><b><span style="font-size:18.0pt;line-height:115%">My</span></b></span><b><span style="font-size:18.0pt;line-height:115%"> <span class="SpellE">books</span>.<o:p></o:p></span></b></p><p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-size:18.0pt;line-height:115%"><o:p>&nbsp;</o:p></span></b></p><p class="MsoNormal" align="center" style="text-align:center"><iframe type="text/html" sandbox="allow-scripts allow-same-origin allow-popups" width="250" height="418" frameborder="0" allowfullscreen="" style="max-width:100%" src="https://leer.amazon.es/kp/card?asin=B0CXYJ72MZ&amp;preview=newtab&amp;linkCode=kpe&amp;ref_=cm_sw_r_kb_dp_WY7RYCZYC17WE7X17CDP&amp;hideBuy=true&amp;hideShare=true"></iframe></p>
 <p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-size:18.0pt;line-height:115%"><o:p>&nbsp;</o:p></span></b></p></div>
+
+
+
+
+  <h1>Protección de Imágenes</h1>
+  <div class="image-container">
+    <img src="Test%20Web_archivos/image010.png" alt="Imagen protegida">
+    <div class="image-overlay"></div>
+  </div>
 
 
 
