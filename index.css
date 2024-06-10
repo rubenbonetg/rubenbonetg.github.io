@@ -1,6 +1,9 @@
 <html><head><style>
 <!--
-<link rel="icon" href="src="Test%20Web_archivos/r.ico" type="image/x-icon">
+<head>
+  <link rel="icon" type="image/x-icon" href="Test%20Web_archivos/r.ico">
+</head>
+<body>
 
  /* Font Definitions */
  @font-face
@@ -1086,6 +1089,7 @@ word-wrap:break-word">
     
     
   </div>
+
 
 
 
