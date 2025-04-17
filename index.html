@@ -1,140 +1,117 @@
 <html><head>
-<meta charset="UTF-8">
-<link rel="File-List" href="index_archivos/filelist.xml">
-<link rel="Edit-Time-Data" href="index_archivos/editdata.mso"><style>
-/* Reset and base styles */
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  font-family: "IBM Plex Mono", monospace;
-}
+  <meta charset="UTF-8">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      font-family: "IBM Plex Mono", monospace;
+    }
 
-/* Container to hold all content */
-.container {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  margin: 0 auto;
-}
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
 
-/* Fixed position for the pulsing image */
-.pulse-container {
-  position: fixed;
-  top: 70%;
-  left: 46%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-  pointer-events: none;
-}
+    .main-image-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: fit-content;
+      height: fit-content;
+    }
 
-.pulse {
-  animation: pulseAnimation 2.5s infinite;
-  width: 131px;
-  height: 131px;
-}
+    .main-image {
+      width: 373px;
+      height: 198px;
+      pointer-events: none;
+      user-select: none;
+      display: block;
+    }
 
-@keyframes pulseAnimation {
-  0% { transform: translate(-50%, -50%) scale(1); }
-  50% { transform: translate(-50%, -50%) scale(1.15); }
-  100% { transform: translate(-50%, -50%) scale(1); }
-}
+    .pulse {
+      position: absolute;
+      top: 30%; /* ajusta si quieres moverlo arriba/abajo */
+      left: 8%; /* ajusta esto para moverlo a la derecha/izquierda */
+      width: 131px;
+      height: 131px;
+      animation: pulseAnimation 2.5s infinite;
+      pointer-events: none;
+    }
 
-/* Center the main image */
-.main-image-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 1;
-}
+    @keyframes pulseAnimation {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+      100% { transform: scale(1); }
+    }
 
-.main-image {
-  width: 373px;
-  height: 198px;
-  pointer-events: none;
-  user-select: none;
-}
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px;
+      z-index: 100;
+    }
 
-/* Header styles */
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 20px;
-  z-index: 100;
-}
+    .projects-link {
+      position: fixed;
+      bottom: 20px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      z-index: 100;
+    }
 
-/* Footer/projects link */
-.projects-link {
-  position: fixed;
-  bottom: 20px;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  z-index: 100;
-}
+    a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10pt;
+      line-height: 1.15;
+      color: black;
+      text-decoration: none;
+    }
 
-/* Prevent selection and dragging */
-.no-select {
-  -webkit-user-drag: none;
-  user-select: none;
-  pointer-events: none;
-}
-
-/* Links styling */
-a {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 10pt;
-  line-height: 1.15;
-  color: black;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-</style>
-
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 
 <body>
-<div class="container">
-  <!-- Header with name and links -->
-  <div class="header">
-    <p style="font-family:'IBM Plex Mono'; margin:0;">
-      RUBÉN BONET G. © 2025
-      <span style="margin-left:100px;"></span>
-      <a href="https://www.behance.net/rubenbonetg">Behance.</a>
-      <span style="margin-left:20px;"></span>
-      <a href="http://instagram.com/lovebloom.dot">Instagram.</a>
-      <span style="margin-left:20px;"></span>
-      <a href="https://www.youtube.com/channel/UCjvk1Mq25RZlr0u9kWq1NdA">Youtube.</a>
-      <span style="margin-left:20px;"></span>
-      <a href="https://open.spotify.com/show/5iMgr4YexWxNigshbfnQH7">Spotify.</a>
-      <span style="margin-left:20px;"></span>
-      <a href="https://www.tiktok.com/@therenb">TikTok.</a>
-      <span style="margin-left:20px;"></span>
-      <a href="mailto:rubenbonet.design@outlook.com">Contact.</a>
-    </p>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <p style="margin:0;">
+        RUBÉN BONET G. © 2025
+        <span style="margin-left:100px;"></span>
+        <a href="https://www.behance.net/rubenbonetg">Behance.</a>
+        <span style="margin-left:20px;"></span>
+        <a href="http://instagram.com/lovebloom.dot">Instagram.</a>
+        <span style="margin-left:20px;"></span>
+        <a href="https://www.youtube.com/channel/UCjvk1Mq25RZlr0u9kWq1NdA">Youtube.</a>
+        <span style="margin-left:20px;"></span>
+        <a href="https://open.spotify.com/show/5iMgr4YexWxNigshbfnQH7">Spotify.</a>
+        <span style="margin-left:20px;"></span>
+        <a href="https://www.tiktok.com/@therenb">TikTok.</a>
+        <span style="margin-left:20px;"></span>
+        <a href="mailto:rubenbonet.design@outlook.com">Contact.</a>
+      </p>
+    </div>
+
+    <!-- Wrapper for dragon and button (both move together) -->
+    <div class="main-image-wrapper">
+      <img src="index_archivos/image004.png" class="main-image" alt="">
+      <img src="index_archivos/image002.png" class="pulse" alt="">
+    </div>
+
+    <!-- Projects link -->
+    <div class="projects-link">
+      <p style="font-family:'IBM Plex Mono'; font-size:18pt; margin:0;">[PROJECTS]</p>
+    </div>
   </div>
 
-  <!-- Pulsing image (fixed position) -->
-  <div class="pulse-container">
-    <img src="index_archivos/image002.png" class="pulse" alt="">
-  </div>
-
-  <!-- Main centered image -->
-  <div class="main-image-container">
-    <img src="index_archivos/image004.png" class="main-image no-select" alt="">
-  </div>
-
-  <!-- Projects link at bottom -->
-  <div class="projects-link">
-    <p style="font-family:'IBM Plex Mono'; font-size:18pt; margin:0;">[PROJECTS]</p>
-  </div>
-</div>
 
 </body></html>
