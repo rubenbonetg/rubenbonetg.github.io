@@ -22,6 +22,7 @@
       transform: translate(-50%, -50%);
       width: fit-content;
       height: fit-content;
+      text-align: center;
     }
 
     .main-image {
@@ -34,8 +35,8 @@
 
     .pulse {
       position: absolute;
-      top: 30%; /* ajusta si quieres moverlo arriba/abajo */
-      left: 8%; /* ajusta esto para moverlo a la derecha/izquierda */
+      top: 30%;
+      left: 8%;
       width: 131px;
       height: 131px;
       animation: pulseAnimation 2.5s infinite;
@@ -57,13 +58,15 @@
       z-index: 100;
     }
 
-    .projects-link {
-      position: fixed;
-      bottom: 20px;
-      left: 0;
-      width: 100%;
-      text-align: center;
-      z-index: 100;
+    .projects-overlay {
+      position: absolute;
+      top: -60px; /* encima del dragón */
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'IBM Plex Mono';
+      font-size: 18pt;
+      margin: 0;
+      z-index: 10;
     }
 
     a {
@@ -103,15 +106,10 @@
 
     <!-- Wrapper for dragon and button (both move together) -->
     <div class="main-image-wrapper">
+      <p class="projects-overlay">[PROJECTS]</p>
       <img src="index_archivos/image004.png" class="main-image" alt="">
       <img src="index_archivos/image002.png" class="pulse" alt="">
     </div>
-
-    <!-- Projects link -->
-    <div class="projects-link">
-      <p style="font-family:'IBM Plex Mono'; font-size:18pt; margin:0;">[PROJECTS]</p>
-    </div>
   </div>
-
 
 </body></html>
