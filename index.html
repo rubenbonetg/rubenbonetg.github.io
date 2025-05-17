@@ -19,6 +19,9 @@
             max-width: 1200px;
             margin: 0 auto;
             overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         
         .logo-container {
@@ -29,14 +32,16 @@
         }
         
         .portfolio-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             margin-bottom: 10%;
+            flex: 1;
+            justify-content: center;
         }
         
         .portfolio-item {
-            width: 100%;
+            max-width: 100%;
             height: auto;
             cursor: pointer;
             transition: transform 0.3s ease;
@@ -44,12 +49,15 @@
             pointer-events: none;
         }
         
-        .portfolio-item:hover {
-            transform: scale(1.03);
+        /* Estilo específico para la imagen 088 */
+        #image-088 {
+            width: 180px; /* Tamaño más pequeño */
+            margin: 0 auto;
+            display: block;
         }
         
         .footer {
-            margin-top: 10%;
+            margin-top: auto;
             display: flex;
             align-items: center;
             flex-wrap: wrap;
@@ -102,6 +110,7 @@
             position: relative;
             display: inline-block;
             width: 100%;
+            text-align: center;
         }
         
         img {
@@ -116,9 +125,8 @@
                 padding: 8% 5%;
             }
             
-            .portfolio-gallery {
-                grid-template-columns: 1fr;
-                gap: 15px;
+            #image-088 {
+                width: 150px;
             }
             
             .footer {
@@ -137,6 +145,10 @@
                 margin-bottom: 10%;
             }
             
+            #image-088 {
+                width: 120px;
+            }
+            
             .social-links {
                 flex-direction: column;
                 gap: 8px;
@@ -152,17 +164,8 @@
         </div>
 
         <div class="portfolio-gallery">
-            
-            
-            
-            
-            
-            
-            
-            
-            
             <a href="" target="_blank" class="clickable-container">
-                <img class="portfolio-item" width="247" height="110" src="index_archivos/image088.png" alt="IMAGE LOGO">
+                <img id="image-088" class="portfolio-item" src="index_archivos/image088.png" alt="IMAGE LOGO">
             </a>
         </div>
         
@@ -199,9 +202,7 @@
             return false;
         });
         
-        
         document.addEventListener('keydown', function(e) {
-           
             if ((e.ctrlKey && (e.key === 'c' || e.key === 'C' || e.key === 'x' || e.key === 'X' || e.key === 's' || e.key === 'S' || e.key === 'u' || e.key === 'U')) || e.key === 'F12') {
                 e.preventDefault();
                 alert('Esta acción no está permitida');
@@ -209,14 +210,11 @@
             }
         });
         
-        
         document.addEventListener('visibilitychange', function() {
             if (document.hidden) {
-                        } else {
+            } else {
                 document.title = 'Rubén Bonet G.';
             }
         });
     </script>
-
-
 </body></html>
