@@ -1,53 +1,71 @@
-<html lang="es"><head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Rubén Bonet G.</title>
     <style>
+        /* Reset y estilos base */
+        :root {
+            --max-width: 1200px;
+            --padding-desktop: 5%;
+            --padding-tablet: 8%;
+            --padding-mobile: 5%;
+        }
+        
         * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
-            -webkit-touch-callout: none;
             -webkit-tap-highlight-color: transparent;
         }
         
+        html {
+            font-size: 16px;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 5% 3%;
-            max-width: 1200px;
-            margin: 0 auto;
-            overflow-x: hidden;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #000;
+            background-color: #fff;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            padding: 0;
+            margin: 0;
         }
         
-        .logo-container {
-            display: flex;
-            align-items: center;
-            margin-bottom: 5%;
-            cursor: pointer;
+        /* Contenedor principal */
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            flex: 1;
         }
         
+        /* Imagen principal */
         .portfolio-gallery {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 10%;
-            flex: 1;
             justify-content: center;
+            flex: 1;
+            margin-bottom: 3rem;
         }
         
-        /* Estilo para la imagen 088 */
         #image-088 {
-            width: 180px;
-            margin: 0 auto;
+            width: min(180px, 80%);
+            height: auto;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
             display: block;
-            cursor: pointer;
-            opacity: 0; /* Inicia invisible */
-            animation: fadeIn 2s ease-in forwards;
+            margin: 0 auto;
         }
         
         @keyframes fadeIn {
@@ -55,30 +73,50 @@
             to { opacity: 1; }
         }
         
-        /* Footer completo */
+        /* Footer - Posición abajo a la derecha */
         .footer {
             margin-top: auto;
+            padding: 1.5rem;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.5rem;
+        }
+        
+        .footer-info {
             display: flex;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
+            gap: 1rem;
         }
         
         .footer-logo {
-            margin-right: 10px;
-            height: 39px;
+            height: 2rem;
             width: auto;
+        }
+        
+        .footer-text {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: #000;
         }
         
         .social-links {
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+            gap: 1rem;
         }
         
         .social-links a {
-            color: #000000;
+            color: #000;
             text-decoration: none;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 0.9rem;
             position: relative;
         }
         
@@ -97,95 +135,91 @@
             width: 100%;
         }
         
-        .footer-text {
-            font-weight: bold;
-        }
-        
-        .clickable-container {
-            position: relative;
-            display: inline-block;
-            width: 100%;
-            text-align: center;
-        }
-        
-        img {
-            -webkit-user-drag: none;
-            max-width: 100%;
-            height: auto;
-        }
-        
+        /* Media Queries */
         @media (max-width: 768px) {
-            body {
-                padding: 8% 5%;
+            .container {
+                padding: 1.5rem;
             }
             
             #image-088 {
-                width: 150px;
+                width: min(150px, 70%);
             }
             
             .footer {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 15px;
+                padding: 1rem;
+                justify-content: center;
+            }
+            
+            .footer-content {
+                align-items: center;
             }
         }
         
         @media (max-width: 480px) {
-            body {
-                padding: 10% 5%;
+            html {
+                font-size: 14px;
+            }
+            
+            .container {
+                padding: 1rem;
             }
             
             #image-088 {
-                width: 120px;
+                width: min(120px, 60%);
+            }
+            
+            .footer-info {
+                flex-direction: column;
+                gap: 0.5rem;
             }
             
             .social-links {
-                flex-direction: column;
-                gap: 8px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
         }
     </style>
 </head>
-
 <body>
     <div class="container">
-        <div class="logo-container">
-            <!-- Espacio para logo si lo necesitas -->
-        </div>
-
         <div class="portfolio-gallery">
-            <a href="https://rubenbonetg.github.io/projects/" class="clickable-container">
+            <a href="https://rubenbonetg.github.io/projects/">
                 <img id="image-088" src="index_archivos/image088.png" alt="IMAGE LOGO">
             </a>
         </div>
-        
-        <div class="footer">
-            <img class="footer-logo" width="70" height="39" src="index_archivos/image020.jpg" alt="Logo footer">
-            <span class="footer-text">RUBÉN BONET G. © 2025</span>
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <img class="footer-logo" src="index_archivos/image020.jpg" alt="Logo footer">
+                <span class="footer-text">RUBÉN BONET G. © 2025</span>
+            </div>
             <div class="social-links">
-                <a href="https://www.behance.net/rubenbonetg">Behance.</a>
-                <a href="http://instagram.com/lovebloom.dot">Instagram.</a>
-                <a href="https://www.youtube.com/channel/UCjvk1Mq25RZlr0u9kWq1NdA">Youtube.</a>
-                <a href="https://open.spotify.com/show/5iMgr4YexWxNigshbfnQH7">Spotify.</a>
-                <a href="https://www.tiktok.com/@therenb">TikTok.</a>
-                <a href="mailto:rubenbonet.design@outlook.com">Contact.</a>
+                <a href="https://www.behance.net/rubenbonetg">Behance</a>
+                <a href="http://instagram.com/lovebloom.dot">Instagram</a>
+                <a href="https://www.youtube.com/channel/UCjvk1Mq25RZlr0u9kWq1NdA">Youtube</a>
+                <a href="https://open.spotify.com/show/5iMgr4YexWxNigshbfnQH7">Spotify</a>
+                <a href="https://www.tiktok.com/@therenb">TikTok</a>
+                <a href="mailto:rubenbonet.design@outlook.com">Contact</a>
             </div>
         </div>
-    </div>
+    </footer>
 
     <script>
-        // Asegura que la animación funcione incluso si CSS falla
+        // Efecto de fade-in
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(function() {
-                document.getElementById('image-088').style.opacity = '1';
-            }, 100);
+                const image = document.getElementById('image-088');
+                if(image) image.style.opacity = '1';
+            }, 300);
         });
         
-        // Resto de tus protecciones...
+        // Protecciones
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
-            alert('Esta acción no está permitida');
             return false;
         });
     </script>
-</body></html>
+</body>
+</html>
