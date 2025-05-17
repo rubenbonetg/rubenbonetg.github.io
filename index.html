@@ -1,5 +1,4 @@
-<html lang="es">
-<head>
+<html lang="es"><head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Rubén Bonet G.</title>
@@ -25,6 +24,13 @@
             min-height: 100vh;
         }
         
+        .logo-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5%;
+            cursor: pointer;
+        }
+        
         .portfolio-gallery {
             display: flex;
             flex-direction: column;
@@ -41,12 +47,7 @@
             display: block;
             cursor: pointer;
             opacity: 0; /* Inicia invisible */
-            animation: fadeIn 1.5s ease-in-out forwards;
-            transition: transform 0.3s ease;
-        }
-        
-        #image-088:hover {
-            transform: scale(1.05);
+            animation: fadeIn 2s ease-in forwards;
         }
         
         @keyframes fadeIn {
@@ -54,6 +55,7 @@
             to { opacity: 1; }
         }
         
+        /* Footer completo */
         .footer {
             margin-top: auto;
             display: flex;
@@ -62,25 +64,128 @@
             gap: 10px;
         }
         
-        /* Resto de tus estilos... */
+        .footer-logo {
+            margin-right: 10px;
+            height: 39px;
+            width: auto;
+        }
+        
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .social-links a {
+            color: #000000;
+            text-decoration: none;
+            position: relative;
+        }
+        
+        .social-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: #000;
+            transition: width 0.3s ease;
+        }
+        
+        .social-links a:hover::after {
+            width: 100%;
+        }
+        
+        .footer-text {
+            font-weight: bold;
+        }
+        
+        .clickable-container {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+        }
+        
+        img {
+            -webkit-user-drag: none;
+            max-width: 100%;
+            height: auto;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 8% 5%;
+            }
+            
+            #image-088 {
+                width: 150px;
+            }
+            
+            .footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 10% 5%;
+            }
+            
+            #image-088 {
+                width: 120px;
+            }
+            
+            .social-links {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
+        <div class="logo-container">
+            <!-- Espacio para logo si lo necesitas -->
+        </div>
+
         <div class="portfolio-gallery">
             <a href="https://rubenbonetg.github.io/projects/" class="clickable-container">
                 <img id="image-088" src="index_archivos/image088.png" alt="IMAGE LOGO">
             </a>
         </div>
         
-        <!-- Footer... -->
+        <div class="footer">
+            <img class="footer-logo" width="70" height="39" src="index_archivos/image020.jpg" alt="Logo footer">
+            <span class="footer-text">RUBÉN BONET G. © 2025</span>
+            <div class="social-links">
+                <a href="https://www.behance.net/rubenbonetg">Behance.</a>
+                <a href="http://instagram.com/lovebloom.dot">Instagram.</a>
+                <a href="https://www.youtube.com/channel/UCjvk1Mq25RZlr0u9kWq1NdA">Youtube.</a>
+                <a href="https://open.spotify.com/show/5iMgr4YexWxNigshbfnQH7">Spotify.</a>
+                <a href="https://www.tiktok.com/@therenb">TikTok.</a>
+                <a href="mailto:rubenbonet.design@outlook.com">Contact.</a>
+            </div>
+        </div>
     </div>
 
     <script>
-        // La animación CSS ya maneja el fade-in, este script es opcional para mejor compatibilidad
+        // Asegura que la animación funcione incluso si CSS falla
         document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('image-088').style.opacity = '1';
+            setTimeout(function() {
+                document.getElementById('image-088').style.opacity = '1';
+            }, 100);
+        });
+        
+        // Resto de tus protecciones...
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            alert('Esta acción no está permitida');
+            return false;
         });
     </script>
-</body>
-</html>
+</body></html>
