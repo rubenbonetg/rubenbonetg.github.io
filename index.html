@@ -1,5 +1,9 @@
-<html><head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rubén Bonet G.</title>
   <style>
     body {
       margin: 0;
@@ -7,14 +11,12 @@
       overflow-x: hidden;
       font-family: "IBM Plex Mono", monospace;
     }
-
     .container {
       position: relative;
       width: 100%;
       height: 100vh;
       overflow: hidden;
     }
-
     .main-image-wrapper {
       position: absolute;
       top: 50%;
@@ -24,15 +26,14 @@
       height: fit-content;
       text-align: center;
     }
-
     .main-image {
-      width: 373px;
-      height: 198px;
+      max-width: 373px;
+      width: 100%;
+      height: auto;
       pointer-events: none;
       user-select: none;
       display: block;
     }
-
     .pulse {
       position: absolute;
       top: 30%;
@@ -40,15 +41,13 @@
       width: 131px;
       height: 131px;
       animation: pulseAnimation 2.5s infinite;
-      pointer-events: none;
+      cursor: pointer; /* Añadido cursor pointer para indicar que es clickable */
     }
-
     @keyframes pulseAnimation {
       0% { transform: scale(1); }
       50% { transform: scale(1.15); }
       100% { transform: scale(1); }
     }
-
     .header {
       position: fixed;
       top: 0;
@@ -56,11 +55,11 @@
       width: 100%;
       padding: 20px;
       z-index: 100;
+      box-sizing: border-box;
     }
-
     .projects-overlay {
       position: absolute;
-      top: -60px; /* encima del dragón */
+      top: -60px;
       left: 50%;
       transform: translateX(-50%);
       font-family: 'IBM Plex Mono';
@@ -68,7 +67,6 @@
       margin: 0;
       z-index: 10;
     }
-
     a {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 10pt;
@@ -76,13 +74,69 @@
       color: black;
       text-decoration: none;
     }
-
     a:hover {
       text-decoration: underline;
     }
+    
+    /* Estilos responsivos */
+    @media (max-width: 768px) {
+      .header {
+        padding: 10px;
+        text-align: center;
+      }
+      .header p {
+        font-size: 8pt;
+      }
+      .header span {
+        margin-left: 5px !important;
+      }
+      .main-image {
+        max-width: 280px;
+      }
+      .pulse {
+        width: 100px;
+        height: 100px;
+      }
+      .projects-overlay {
+        font-size: 14pt;
+        top: -45px;
+      }
+      /* Sistema de enlaces móvil */
+      .mobile-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+      .desktop-links {
+        display: none;
+      }
+    }
+    
+    @media (min-width: 769px) {
+      .mobile-links {
+        display: none;
+      }
+      .desktop-links {
+        display: inline;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .main-image {
+        max-width: 220px;
+      }
+      .pulse {
+        width: 80px;
+        height: 80px;
+      }
+      .projects-overlay {
+        font-size: 12pt;
+        top: -35px;
+      }
+    }
   </style>
 </head>
-
 <body>
   <div class="container">
     <!-- Header -->
@@ -90,27 +144,42 @@
       <p style="margin:0;">
         RUBÉN BONET G. © 2025
         {UNDER CONSTRUCTION}
-        <span style="margin-left:100px;"></span>
-        <a href="https://www.behance.net/rubenbonetg">Behance.</a>
-        <span style="margin-left:20px;"></span>
-        <a href="http://instagram.com/lovebloom.dot">Instagram.</a>
-        <span style="margin-left:20px;"></span>
-        <a href="https://www.youtube.com/channel/UCjvk1Mq25RZlr0u9kWq1NdA">Youtube.</a>
-        <span style="margin-left:20px;"></span>
-        <a href="https://open.spotify.com/show/5iMgr4YexWxNigshbfnQH7">Spotify.</a>
-        <span style="margin-left:20px;"></span>
-        <a href="https://www.tiktok.com/@therenb">TikTok.</a>
-        <span style="margin-left:20px;"></span>
-        <a href="mailto:rubenbonet.design@outlook.com">Contact.</a>
+        
+        <!-- Enlaces para escritorio -->
+        <span class="desktop-links">
+          <span style="margin-left:100px;"></span>
+          <a href="https://www.behance.net/rubenbonetg">Behance.</a>
+          <span style="margin-left:20px;"></span>
+          <a href="http://instagram.com/lovebloom.dot">Instagram.</a>
+          <span style="margin-left:20px;"></span>
+          <a href="https://www.youtube.com/channel/UCjvk1Mq25RZlr0u9kWq1NdA">Youtube.</a>
+          <span style="margin-left:20px;"></span>
+          <a href="https://open.spotify.com/show/5iMgr4YexWxNigshbfnQH7">Spotify.</a>
+          <span style="margin-left:20px;"></span>
+          <a href="https://www.tiktok.com/@therenb">TikTok.</a>
+          <span style="margin-left:20px;"></span>
+          <a href="mailto:rubenbonet.design@outlook.com">Contact.</a>
+        </span>
       </p>
+      
+      <!-- Enlaces para móvil -->
+      <div class="mobile-links">
+        <a href="https://www.behance.net/rubenbonetg">Behance.</a>
+        <a href="http://instagram.com/lovebloom.dot">Instagram.</a>
+        <a href="https://www.youtube.com/channel/UCjvk1Mq25RZlr0u9kWq1NdA">Youtube.</a>
+        <a href="https://open.spotify.com/show/5iMgr4YexWxNigshbfnQH7">Spotify.</a>
+        <a href="https://www.tiktok.com/@therenb">TikTok.</a>
+        <a href="mailto:rubenbonet.design@outlook.com">Contact.</a>
+      </div>
     </div>
-
-    <!-- Wrapper for dragon and button (both move together) -->
+    
     <div class="main-image-wrapper">
       <p class="projects-overlay">[PROJECTS]</p>
-      <img src="index_archivos/image004.png" class="main-image" alt="">
-      <img src="index_archivos/image002.png" class="pulse" alt="">
+      <img src="index_archivos/image004.png" class="main-image" alt="Imagen principal">
+      <a href="https://rubenbonetg.github.io/projects/">
+        <img src="index_archivos/image002.png" class="pulse" alt="Proyectos">
+      </a>
     </div>
   </div>
-
-</body></html>
+</body>
+</html>
