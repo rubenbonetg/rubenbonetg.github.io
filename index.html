@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Rubén Bonet G.</title>
     <style>
-        /* Reset y estilos base */
-        :root {
+                :root {
             --max-width: 1200px;
             --padding-desktop: 5%;
             --padding-tablet: 8%;
@@ -41,7 +40,6 @@
             margin: 0;
         }
         
-        /* Contenedor principal */
         .container {
             width: 100%;
             max-width: var(--max-width);
@@ -50,7 +48,6 @@
             flex: 1;
         }
         
-        /* Imagen principal */
         .portfolio-gallery {
             display: flex;
             flex-direction: column;
@@ -74,7 +71,6 @@
             to { opacity: 1; }
         }
         
-        /* Footer - Posición abajo a la derecha */
         .footer {
             margin-top: auto;
             padding: 1.5rem;
@@ -136,7 +132,6 @@
             width: 100%;
         }
         
-        /* Media Queries */
         @media (max-width: 768px) {
             .container {
                 padding: 1.5rem;
@@ -209,7 +204,6 @@
     </footer>
 
     <script>
-        // Efecto de fade-in
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(function() {
                 const image = document.getElementById('image-088');
@@ -217,7 +211,6 @@
             }, 300);
         });
         
-        // Protecciones
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
             return false;
