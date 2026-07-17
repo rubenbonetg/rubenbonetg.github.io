@@ -1,276 +1,295 @@
 <html lang="es"><head>
-<link rel="icon" href="index_archivos/r.ico" type="image/x-icon">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-<title>Rubén Bonet G.</title>
-<style>
-:root {
---max-width: 1200px;
---padding-desktop: 5%;
---padding-tablet: 8%;
---padding-mobile: 5%;
-}
-
-* {
-box-sizing: border-box;
-margin: 0;
-padding: 0;
--webkit-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
--webkit-tap-highlight-color: transparent;
-}
-
-html {
-font-size: 16px;
-}
-
-body {
-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-line-height: 1.6;
-color: #000;
-background-color: #fff;
-display: flex;
-flex-direction: column;
-min-height: 100vh;
-padding: 0;
-margin: 0;
-}
-
-.container {
-width: 100%;
-max-width: var(--max-width);
-margin: 0 auto;
-padding: 2rem 1rem;
-flex: 1;
-display: flex;
-flex-direction: column;
-}
-
-.portfolio-gallery {
-display: flex;
-flex-direction: column;
-align-items: flex-end; 
-justify-content: center; 
-flex: 1;
-margin-bottom: 3rem;
-width: 100%;
-}
-
-
-.portfolio-link {
-font-size: 55px; 
-color: #000; 
-text-decoration: none; 
-position: relative; 
-display: inline-flex; 
-align-items: center; 
-}
-
-
-.portfolio-link::after {
-content: '';
-position: absolute;
-width: 0;
-height: 3px; 
-bottom: -5px; 
-left: 0;
-background-color: #000;
-transition: width 0.3s ease;
-}
-
-.portfolio-link:hover::after {
-width: 100%;
-}
-
-
-.portfolio-parentheses {
-display: inline-flex;
-align-items: center; 
-}
-
-
-.portfolio-gif {
-display: inline-block; 
-height: 0.9em; 
-width: auto; 
-vertical-align: middle; 
-margin: 0 5px; 
-pointer-events: none; 
-}
-
-
-#image-088 {
-width: min(180px, 80%);
-height: auto;
-opacity: 0;
-animation: fadeIn 1.5s ease-in-out forwards;
-display: block;
-margin: 0 auto;
-}
-
-@keyframes fadeIn {
-from { opacity: 0; }
-to { opacity: 1; }
-}
-
-.footer {
-margin-top: auto;
-padding: 1.5rem;
-width: 100%;
-display: flex;
-justify-content: flex-end;
-}
-
-.footer-content {
-display: flex;
-flex-direction: column;
-align-items: flex-end;
-gap: 0.5rem;
-}
-
-.footer-info {
-display: flex;
-align-items: center;
-gap: 1rem;
-}
-
-.footer-logo {
-height: 2rem;
-width: auto;
-}
-
-.footer-text {
-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-font-weight: bold;
-font-size: 0.9rem;
-color: #000;
-}
-
-.social-links {
-display: flex;
-gap: 1rem;
-}
-
-.social-links a {
-color: #000;
-text-decoration: none;
-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-font-size: 0.9rem;
-position: relative;
-}
-
-.social-links a::after {
-content: '';
-position: absolute;
-width: 0;
-height: 1px;
-bottom: 0;
-left: 0;
-background-color: #000;
-transition: width 0.3s ease;
-}
-
-.social-links a:hover::after {
-width: 100%;
-}
-
-/* Ajustes para móviles */
-@media (max-width: 768px) {
-.container {
-padding: 1.5rem;
-}
-
-#image-088 {
-width: min(150px, 70%);
-}
-
-.portfolio-link {
-font-size: 40px; 
-}
-
-.footer {
-padding: 1rem;
-justify-content: center;
-}
-
-.footer-content {
-align-items: center;
-}
-
-.portfolio-gallery {
-align-items: center; 
-}
-}
-
-@media (max-width: 480px) {
-html {
-font-size: 14px;
-}
-
-.container {
-padding: 1rem;
-}
-
-#image-088 {
-width: min(120px, 60%);
-}
-
-.footer-info {
-flex-direction: column;
-gap: 0.5rem;
-}
-
-.social-links {
-flex-wrap: wrap;
-justify-content: center;
-}
-}
-</style>
+     <link rel="icon" href="index_archivos/r.ico" "="" type="image/x-icon">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Rubén Bonet G.</title>
+    <style>
+        * {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 5% 3% 0; 
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; 
+        }
+        
+        .container {
+            flex-grow: 1; 
+            width: 100%;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5%;
+            cursor: pointer;
+        }
+        
+        .portfolio-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 10%;
+        }
+        
+        .portfolio-item {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            object-fit: contain;
+            pointer-events: none;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .portfolio-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .footer {
+            margin-top: auto; 
+            padding: 1.5rem;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.5rem;
+        }
+        
+        .footer-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .footer-logo {
+            height: 32px;
+            width: 57.42px;
+        }
+        
+        .footer-text {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: bold;
+            font-size: 14.4px;
+            color: #000;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            color: #000;
+            text-decoration: none;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14.4px;
+            position: relative;
+        }
+        
+        .social-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: #000;
+            transition: width 0.3s ease;
+        }
+        
+        .social-links a:hover::after {
+            width: 100%;
+        }
+        
+        .clickable-container {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        img {
+            pointer-events: none;
+            -webkit-user-drag: none;
+            max-width: 100%;
+            height: auto;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 8% 5% 0; 
+            }
+            
+            .portfolio-gallery {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .footer {
+                justify-content: center;
+                padding: 1rem;
+            }
+            
+            .footer-content {
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 10% 5% 0; 
+            }
+            
+            .logo-container {
+                margin-bottom: 10%;
+            }
+            
+            .footer-info {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .social-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
+
 <body>
-<div class="container">
-<div class="portfolio-gallery">
-<a class="portfolio-link" href="https://rubenbonetg.github.io/projects/">
-<span class="portfolio-text">portfolio</span>
-<span class="portfolio-parentheses">
-(
-                    <img class="portfolio-gif" src="index_archivos/gifweb.gif" alt="">
-)
-</span>
+    <div class="container">
+        <div class="logo-container">
+            <a href="https://rubenbonetg.github.io/" target="_blank" class="clickable-container">
+                <img id="logo-image" width="81" height="72" src="index_archivos/image002.png" alt="Logo" style="opacity: 1;">
+            </a>
+        </div>
+
+        <div class="portfolio-gallery">
+            <a href="https://www.behance.net/gallery/202958879/Sirene-y2k" target="_blank" class="clickable-container">
+                <img class="portfolio-item" width="276" height="125" src="index_archivos/image008.png" alt="Trabajo 1 - Sirene y2k" style="animation-delay: 0s;">
+                 </a><a href="https://www.behance.net/gallery/146319537/Seraph" target="_blank" class="clickable-container">
+    <img class="portfolio-item" width="300" height="150" src="index_archivos/image006.png" alt="Trabajo 11 - Seraph" style="animation-delay: 0.1s;">
 </a>
-</div>
-</div>
+            
+            <a href="https://www.behance.net/gallery/203136513/Angels-Vision" target="_blank" class="clickable-container">
+                <img class="portfolio-item" width="484" height="106" src="index_archivos/image009.png" alt="Trabajo 2 - Angels Vision" style="animation-delay: 0.2s;">
+            </a>
+            <a href="https://www.behance.net/gallery/223258703/PHANTOM" target="_blank" class="clickable-container">
+                <img class="portfolio-item" width="306" height="113" src="index_archivos/image016.png" alt="Trabajo 8 - PHANTOM" style="animation-delay: 0.3s;">
+            </a>
+            <a href="https://www.behance.net/gallery/181154701/Bubble" target="_blank" class="clickable-container">
+                <img class="portfolio-item" width="304" height="114" src="index_archivos/image010.png" alt="Trabajo 3 - Bubble" style="animation-delay: 0.4s;">
+            </a>
+            <a href="https://www.behance.net/gallery/205137417/Phantom-Chrysalide-Series" target="_blank" class="clickable-container">
+                <img class="portfolio-item" width="392" height="240" src="index_archivos/image011.png" alt="Trabajo 4 - Phantom Chrysalide Series" style="animation-delay: 0.5s;">
+            </a>
+            <a href="https://www.behance.net/gallery/123110699/Aldous-Free-Font" target="_blank" class="clickable-container">
+                <img class="portfolio-item" width="257" height="126" src="index_archivos/image013.png" alt="Trabajo 5 - Aldous Free Font" style="animation-delay: 0.6s;">
+            </a>
+            <a href="https://www.behance.net/gallery/122061003/The-Ascend" target="_blank" class="clickable-container">
+                <img class="portfolio-item" width="276" height="173" src="index_archivos/image014.png" alt="Trabajo 6 - The Ascend" style="animation-delay: 0.7s;">
+            </a>
+            <a href="https://www.behance.net/gallery/141174543/-Because-i-love-you-i-made-a-heart-for-you-" target="_blank" class="clickable-container">
+                <img class="portfolio-item" width="420" height="107" src="index_archivos/image015.png" alt="Trabajo 7 - Because I Love You" style="animation-delay: 0.8s;">
+            </a>
+            <a href="https://www.behance.net/gallery/248681409/Het-Oude-Stadhuis-%28The-Hague%29" target="_blank" class="clickable-container">
+                <img class="portfolio-item" width="420" height="107" src="index_archivos/image021.png" alt="Trabajo 8 - Het Oude Stadhuis" style="animation-delay: 0.9s;">
+            </a>
+            <a href="https://www.behance.net/gallery/252442449/flowerpot-collection" target="_blank" class="clickable-container">
+                <img class="portfolio-item" width="367" height="113" src="index_archivos/image022.png" alt="Trabajo 9 - flowerpot collection" style="animation-delay: 1s;">
+            </a>
+            <a href="https://www.behance.net/gallery/191977069/The-Mystic" target="_blank" class="clickable-container">
+                <img class="portfolio-item" width="367" height="113" src="index_archivos/image017.png" alt="Trabajo 9 - The Mystic" style="animation-delay: 1s;">
+            </a><a href="https://www.behance.net/gallery/164972837/KONAMI-AND-KONAMIS-INFERNO-FROM-2021" target="_blank" class="clickable-container">
+                <img class="portfolio-item" width="247" height="110" src="index_archivos/image018.png" alt="Trabajo 10 - KONAMI" style="animation-delay: 1.1s;">
+            </a>
+        </div>
+        
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <img class="footer-logo" src="index_archivos/image020.jpg" alt="Logo footer" width="57.42" height="32">
+                    <span class="footer-text">RUBÉN BONET G. © 2026</span>
+                </div>
+                <div class="social-links">
+                    <a href="https://hephaestusmetalslinger.tumblr.com/">Tumblr</a>
+                    <a href="https://www.behance.net/rubenbonetg">Behance</a>
+                    <a href="http://instagram.com/metaleclos">Instagram</a>
+                    <a href="https://www.tiktok.com/@therenb">TikTok</a>
+                    <a href="mailto:rubenbonet.design@outlook.com">Contact</a>
+                </div>
+            </div>
+        </footer>
+    </div>
 
-<footer class="footer">
-<div class="footer-content">
-<div class="footer-info">
-<img class="footer-logo" src="index_archivos/image020.jpg" alt="Logo footer">
-<span class="footer-text">RUBÉN BONET G. © 2026</span>
-</div>
-<div class="social-links">
-<a href="https://hephaestusmetalslinger.tumblr.com/">Tumblr</a>
-<a href="https://www.behance.net/rubenbonetg">Behance</a>
-<a href="http://instagram.com/metaleclos">Instagram</a>
-<a href="https://www.tiktok.com/@therenb">TikTok</a>
-<a href="mailto:rubenbonet.design@outlook.com">Contact</a>
-</div>
-</div>
-</footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('logo-image').style.opacity = '1';
+            
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            portfolioItems.forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+        
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            alert('Esta acción no está permitida');
+            return false;
+        });
+        
+        document.addEventListener('dragstart', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+                return false;
+            }
+        });
+        
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey && (e.key === 'c' || e.key === 'C' || e.key === 'x' || e.key === 'X' || e.key === 's' || e.key === 'S' || e.key === 'u' || e.key === 'U')) || e.key === 'F12') {
+                e.preventDefault();
+                alert('Esta acción no está permitida');
+                return false;
+            }
+        });
+        
+        document.addEventListener('visibilitychange', function() {
+            if (!document.hidden) {
+                document.title = 'Rubén Bonet G.';
+            }
+        });
+    </script>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-setTimeout(function() {
-const image = document.getElementById('image-088');
-if(image) image.style.opacity = '1';
-}, 300);
-});
 
-document.addEventListener('contextmenu', function(e) {
-e.preventDefault();
-return false;
-});
-</script>
+
 
 </body></html>
