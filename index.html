@@ -1,313 +1,276 @@
-<html lang="es">
-<head>
-    <link rel="icon" href="index_archivos/r.ico" type="image/x-icon">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Rubén Bonet G.</title>
-    <style>
-        :root {
-            --max-width: 1200px;
-            --padding-desktop: 5%;
-            --padding-tablet: 8%;
-            --padding-mobile: 5%;
-        }
-        
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            -webkit-tap-highlight-color: transparent;
-        }
-        
-        html {
-            font-size: 16px;
-        }
-        
-        body {
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #000;
-            background-color: #fff;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 2rem 1rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .portfolio-gallery {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end; /* Alinea a la derecha */
-            justify-content: center; /* Centrado vertical */
-            flex: 1;
-            margin-bottom: 3rem;
-            width: 100%;
-        }
-        
-        /* Contenedor relativo para el enlace completo */
-        .portfolio-link {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            text-decoration: none;
-            
-            /* --- INICIO ANIMACIÓN ENTRADA --- */
-            opacity: 0; /* Empieza invisible */
-            animation: fadeInUp 1.2s ease-out forwards; /* Aplica la animación */
-            animation-delay: 0.5s; /* Pequeño retraso para que se note */
-            /* --- FIN ANIMACIÓN ENTRADA --- */
-        }
+<html lang="es"><head>
+<link rel="icon" href="index_archivos/r.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Rubén Bonet G.</title>
+<style>
+:root {
+--max-width: 1200px;
+--padding-desktop: 5%;
+--padding-tablet: 8%;
+--padding-mobile: 5%;
+}
 
-        /* Definición de la animación fadeInUp */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translate3d(0, 40px, 0); /* Empieza 40px más abajo */
-            }
-            to {
-                opacity: 1;
-                transform: translate3d(0, 0, 0); /* Termina en su posición original */
-            }
-        }
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+-webkit-tap-highlight-color: transparent;
+}
 
-        /* Línea que aparece al poner el ratón encima */
-        .portfolio-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 3px; /* Grosor de la línea */
-            bottom: -5px; /* Pequeño ajuste para que no toque la imagen */
-            left: 0;
-            background-color: #000;
-            transition: width 0.3s ease;
-        }
+html {
+font-size: 16px;
+}
 
-        .portfolio-link:hover::after {
-            width: 100%;
-        }
+body {
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+line-height: 1.6;
+color: #000;
+background-color: #fff;
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+padding: 0;
+margin: 0;
+}
 
-        /* Estilos para la imagen principal 'Portfolio ( )' */
-        .portfolio-image {
-            display: block;
-            height: 55px; /* Altura original solicitada para el texto */
-            width: auto;
-        }
+.container {
+width: 100%;
+max-width: var(--max-width);
+margin: 0 auto;
+padding: 2rem 1rem;
+flex: 1;
+display: flex;
+flex-direction: column;
+}
 
-        /* ----- SOLUCIÓN PARA POSICIONAR EL GIF ----- */
-        /* Contenedor relativo y específico para el GIF */
-        .portfolio-gif-container {
-            position: absolute;
-            /* Estos valores posicionan el GIF dentro de los paréntesis */
-            /* Ajustados para que coincidan con la imagen image444.png */
-            right: 25px; /* Distancia desde la derecha de la imagen principal */
-            top: 50%;
-            transform: translateY(-50%); /* Centrado vertical */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 35px; /* Ancho estimado del espacio entre paréntesis */
-            height: 100%;
-        }
+.portfolio-gallery {
+display: flex;
+flex-direction: column;
+align-items: flex-end; 
+justify-content: center; 
+flex: 1;
+margin-bottom: 3rem;
+width: 100%;
+}
 
-        .portfolio-gif {
-            display: block;
-            height: 0.8em; /* Escala el GIF relativemente al tamaño de la imagen */
-            width: auto;
-            pointer-events: none; /* Evita interacciones con el GIF */
-        }
-        /* --------------------------------------------- */
-        
-        #image-088 {
-            width: min(180px, 80%);
-            height: auto;
-            opacity: 0;
-            animation: fadeIn 1.5s ease-in-out forwards;
-            display: block;
-            margin: 0 auto;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .footer {
-            margin-top: auto;
-            padding: 1.5rem;
-            width: 100%;
-            display: flex;
-            justify-content: flex-end;
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 0.5rem;
-        }
-        
-        .footer-info {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .footer-logo {
-            height: 2rem;
-            width: auto;
-        }
-        
-        .footer-text {
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            font-weight: bold;
-            font-size: 0.9rem;
-            color: #000;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-        
-        .social-links a {
-            color: #000;
-            text-decoration: none;
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            font-size: 0.9rem;
-            position: relative;
-        }
-        
-        .social-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: 0;
-            left: 0;
-            background-color: #000;
-            transition: width 0.3s ease;
-        }
-        
-        .social-links a:hover::after {
-            width: 100%;
-        }
-        
-        /* Ajustes para móviles */
-        @media (max-width: 768px) {
-            .container {
-                padding: 1.5rem;
-            }
-            
-            #image-088 {
-                width: min(150px, 70%);
-            }
 
-            .portfolio-image {
-                height: 40px; /* Reducción de tamaño en móvil */
-            }
+.portfolio-link {
+font-size: 55px; 
+color: #000; 
+text-decoration: none; 
+position: relative; 
+display: inline-flex; 
+align-items: center; 
+}
 
-            .portfolio-gif-container {
-                right: 18px; /* Ajuste de posición para móvil */
-                width: 25px;
-            }
-            
-            .footer {
-                padding: 1rem;
-                justify-content: center;
-            }
-            
-            .footer-content {
-                align-items: center;
-            }
-            
-            .portfolio-gallery {
-                align-items: center; /* Centrado en móviles */
-            }
-        }
-        
-        @media (max-width: 480px) {
-            html {
-                font-size: 14px;
-            }
-            
-            .container {
-                padding: 1rem;
-            }
-            
-            #image-088 {
-                width: min(120px, 60%);
-            }
-            
-            .footer-info {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-            
-            .social-links {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-        }
-    </style>
+
+.portfolio-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 3px; 
+bottom: -5px; 
+left: 0;
+background-color: #000;
+transition: width 0.3s ease;
+}
+
+.portfolio-link:hover::after {
+width: 100%;
+}
+
+
+.portfolio-parentheses {
+display: inline-flex;
+align-items: center; 
+}
+
+
+.portfolio-gif {
+display: inline-block; 
+height: 0.9em; 
+width: auto; 
+vertical-align: middle; 
+margin: 0 5px; 
+pointer-events: none; 
+}
+
+
+#image-088 {
+width: min(180px, 80%);
+height: auto;
+opacity: 0;
+animation: fadeIn 1.5s ease-in-out forwards;
+display: block;
+margin: 0 auto;
+}
+
+@keyframes fadeIn {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+
+.footer {
+margin-top: auto;
+padding: 1.5rem;
+width: 100%;
+display: flex;
+justify-content: flex-end;
+}
+
+.footer-content {
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+gap: 0.5rem;
+}
+
+.footer-info {
+display: flex;
+align-items: center;
+gap: 1rem;
+}
+
+.footer-logo {
+height: 2rem;
+width: auto;
+}
+
+.footer-text {
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-weight: bold;
+font-size: 0.9rem;
+color: #000;
+}
+
+.social-links {
+display: flex;
+gap: 1rem;
+}
+
+.social-links a {
+color: #000;
+text-decoration: none;
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 0.9rem;
+position: relative;
+}
+
+.social-links a::after {
+content: '';
+position: absolute;
+width: 0;
+height: 1px;
+bottom: 0;
+left: 0;
+background-color: #000;
+transition: width 0.3s ease;
+}
+
+.social-links a:hover::after {
+width: 100%;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+.container {
+padding: 1.5rem;
+}
+
+#image-088 {
+width: min(150px, 70%);
+}
+
+.portfolio-link {
+font-size: 40px; 
+}
+
+.footer {
+padding: 1rem;
+justify-content: center;
+}
+
+.footer-content {
+align-items: center;
+}
+
+.portfolio-gallery {
+align-items: center; 
+}
+}
+
+@media (max-width: 480px) {
+html {
+font-size: 14px;
+}
+
+.container {
+padding: 1rem;
+}
+
+#image-088 {
+width: min(120px, 60%);
+}
+
+.footer-info {
+flex-direction: column;
+gap: 0.5rem;
+}
+
+.social-links {
+flex-wrap: wrap;
+justify-content: center;
+}
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="portfolio-gallery">
-            <a class="portfolio-link" href="https://rubenbonetg.github.io/projects/">
-                <!-- Nueva imagen 'Portfolio ( )' que sustituye al texto -->
-                <img class="portfolio-image" src="image444.png" alt="Portfolio">
-                
-                <!-- Contenedor específico para posicionar el GIF -->
-                <div class="portfolio-gif-container">
-                    <img class="portfolio-gif" src="index_archivos/tu-gif.gif" alt="">
-                </div>
-            </a>
-        </div>
-    </div>
-    
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-info">
-                <img class="footer-logo" src="index_archivos/image020.jpg" alt="Logo footer">
-                <span class="footer-text">RUBÉN BONET G. © 2026</span>
-            </div>
-            <div class="social-links">
-                <a href="https://hephaestusmetalslinger.tumblr.com/">Tumblr</a>
-                <a href="https://www.behance.net/rubenbonetg">Behance</a>
-                <a href="http://instagram.com/metaleclosos">Instagram</a>
-                <a href="https://www.tiktok.com/@therenb">TikTok</a>
-                <a href="mailto:rubenbonet.design@outlook.com">Contact</a>
-            </div>
-        </div>
-    </footer>
+<div class="container">
+<div class="portfolio-gallery">
+<a class="portfolio-link" href="https://rubenbonetg.github.io/projects/">
+<span class="portfolio-text">portfolio</span>
+<span class="portfolio-parentheses">
+(
+                    <img class="portfolio-gif" src="index_archivos/gifweb.gif" alt="">
+)
+</span>
+</a>
+</div>
+</div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(function() {
-                const image = document.getElementById('image-088');
-                if(image) image.style.opacity = '1';
-            }, 300);
-        });
-        
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-            return false;
-        });
-    </script>
-</body>
-</html>
+<footer class="footer">
+<div class="footer-content">
+<div class="footer-info">
+<img class="footer-logo" src="index_archivos/image020.jpg" alt="Logo footer">
+<span class="footer-text">RUBÉN BONET G. © 2026</span>
+</div>
+<div class="social-links">
+<a href="https://hephaestusmetalslinger.tumblr.com/">Tumblr</a>
+<a href="https://www.behance.net/rubenbonetg">Behance</a>
+<a href="http://instagram.com/metaleclos">Instagram</a>
+<a href="https://www.tiktok.com/@therenb">TikTok</a>
+<a href="mailto:rubenbonet.design@outlook.com">Contact</a>
+</div>
+</div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+setTimeout(function() {
+const image = document.getElementById('image-088');
+if(image) image.style.opacity = '1';
+}, 300);
+});
+
+document.addEventListener('contextmenu', function(e) {
+e.preventDefault();
+return false;
+});
+</script>
+
+</body></html>
