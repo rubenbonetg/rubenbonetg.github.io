@@ -65,8 +65,8 @@
             color: #000; 
             text-decoration: none; 
             position: relative; 
-            display: inline-flex;
-            align-items: center;
+            display: inline-flex; 
+            align-items: center; 
         }
 
       
@@ -75,7 +75,7 @@
             position: absolute;
             width: 0;
             height: 3px; 
-            bottom: 0;
+            bottom: -5px; 
             left: 0;
             background-color: #000;
             transition: width 0.3s ease;
@@ -84,6 +84,23 @@
         .portfolio-link:hover::after {
             width: 100%;
         }
+
+     
+        .portfolio-parentheses {
+            display: inline-flex;
+            align-items: center; 
+        }
+
+       
+        .portfolio-gif {
+            display: inline-block; 
+            height: 0.9em; 
+            width: auto; 
+            vertical-align: middle; 
+            margin: 0 5px; 
+            pointer-events: none; 
+        }
+       
         
         #image-088 {
             width: min(180px, 80%);
@@ -160,6 +177,7 @@
             width: 100%;
         }
         
+        /* Ajustes para móviles */
         @media (max-width: 768px) {
             .container {
                 padding: 1.5rem;
@@ -170,7 +188,7 @@
             }
 
             .portfolio-link {
-                font-size: 40px; /* Tamaño un poco más pequeño en móviles para que no se rompa */
+                font-size: 40px; 
             }
             
             .footer {
@@ -183,7 +201,7 @@
             }
             
             .portfolio-gallery {
-                align-items: center; /* En móviles suele quedar mejor centrado, cámbialo a flex-end si lo quieres a la derecha siempre */
+                align-items: center; 
             }
         }
         
