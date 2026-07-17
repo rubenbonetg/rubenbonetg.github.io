@@ -52,30 +52,46 @@
         .portfolio-gallery {
             display: flex;
             flex-direction: column;
-            align-items: flex-end; 
-            justify-content: center; 
+            align-items: flex-end; /* Alinea a la derecha */
+            justify-content: center; /* Centrado vertical */
             flex: 1;
             margin-bottom: 3rem;
             width: 100%;
         }
         
-       
+        /* Contenedor relativo para el enlace completo */
         .portfolio-link {
-            font-size: 55px; 
-            color: #000; 
-            text-decoration: none; 
-            position: relative; 
-            display: inline-flex; 
-            align-items: center; 
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            
+            /* --- INICIO ANIMACIÓN ENTRADA --- */
+            opacity: 0; /* Empieza invisible */
+            animation: fadeInUp 1.2s ease-out forwards; /* Aplica la animación */
+            animation-delay: 0.5s; /* Pequeño retraso para que se note */
+            /* --- FIN ANIMACIÓN ENTRADA --- */
         }
 
-      
+        /* Definición de la animación fadeInUp */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 40px, 0); /* Empieza 40px más abajo */
+            }
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0); /* Termina en su posición original */
+            }
+        }
+
+        /* Línea que aparece al poner el ratón encima */
         .portfolio-link::after {
             content: '';
             position: absolute;
             width: 0;
-            height: 3px; 
-            bottom: -5px; 
+            height: 3px; /* Grosor de la línea */
+            bottom: -5px; /* Pequeño ajuste para que no toque la imagen */
             left: 0;
             background-color: #000;
             transition: width 0.3s ease;
@@ -85,22 +101,36 @@
             width: 100%;
         }
 
-     
-        .portfolio-parentheses {
-            display: inline-flex;
-            align-items: center; 
+        /* Estilos para la imagen principal 'Portfolio ( )' */
+        .portfolio-image {
+            display: block;
+            height: 55px; /* Altura original solicitada para el texto */
+            width: auto;
         }
 
-       
-        .portfolio-gif {
-            display: inline-block; 
-            height: 0.9em; 
-            width: auto; 
-            vertical-align: middle; 
-            margin: 0 5px; 
-            pointer-events: none; 
+        /* ----- SOLUCIÓN PARA POSICIONAR EL GIF ----- */
+        /* Contenedor relativo y específico para el GIF */
+        .portfolio-gif-container {
+            position: absolute;
+            /* Estos valores posicionan el GIF dentro de los paréntesis */
+            /* Ajustados para que coincidan con la imagen image444.png */
+            right: 25px; /* Distancia desde la derecha de la imagen principal */
+            top: 50%;
+            transform: translateY(-50%); /* Centrado vertical */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px; /* Ancho estimado del espacio entre paréntesis */
+            height: 100%;
         }
-       
+
+        .portfolio-gif {
+            display: block;
+            height: 0.8em; /* Escala el GIF relativemente al tamaño de la imagen */
+            width: auto;
+            pointer-events: none; /* Evita interacciones con el GIF */
+        }
+        /* --------------------------------------------- */
         
         #image-088 {
             width: min(180px, 80%);
@@ -187,8 +217,13 @@
                 width: min(150px, 70%);
             }
 
-            .portfolio-link {
-                font-size: 40px; 
+            .portfolio-image {
+                height: 40px; /* Reducción de tamaño en móvil */
+            }
+
+            .portfolio-gif-container {
+                right: 18px; /* Ajuste de posición para móvil */
+                width: 25px;
             }
             
             .footer {
@@ -201,7 +236,7 @@
             }
             
             .portfolio-gallery {
-                align-items: center; 
+                align-items: center; /* Centrado en móviles */
             }
         }
         
@@ -234,12 +269,13 @@
     <div class="container">
         <div class="portfolio-gallery">
             <a class="portfolio-link" href="https://rubenbonetg.github.io/projects/">
-                <span class="portfolio-text">portfolio</span>
-                <span class="portfolio-parentheses">
-                    (
-                    <img class="portfolio-gif" src="index_archivos/gifweb.gif" alt="">
-                    )
-                </span>
+                <!-- Nueva imagen 'Portfolio ( )' que sustituye al texto -->
+                <img class="portfolio-image" src="image444.png" alt="Portfolio">
+                
+                <!-- Contenedor específico para posicionar el GIF -->
+                <div class="portfolio-gif-container">
+                    <img class="portfolio-gif" src="index_archivos/tu-gif.gif" alt="">
+                </div>
             </a>
         </div>
     </div>
@@ -253,7 +289,7 @@
             <div class="social-links">
                 <a href="https://hephaestusmetalslinger.tumblr.com/">Tumblr</a>
                 <a href="https://www.behance.net/rubenbonetg">Behance</a>
-                <a href="http://instagram.com/metaleclos">Instagram</a>
+                <a href="http://instagram.com/metaleclosos">Instagram</a>
                 <a href="https://www.tiktok.com/@therenb">TikTok</a>
                 <a href="mailto:rubenbonet.design@outlook.com">Contact</a>
             </div>
