@@ -276,6 +276,27 @@
     </footer>
 
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        const gallery = document.querySelector('.portfolio-gallery');
+        const projects = Array.from(gallery.children);
+
+        projects.sort(() => Math.random() - 0.5);
+
+        projects.forEach(project => {
+            gallery.appendChild(project);
+        });
+
+        projects.forEach((project, index) => {
+            const image = project.querySelector('.portfolio-item');
+
+            image.style.animationDelay = `${index * 0.1}s`;
+        });
+
+    });
+</script>
 ```
 
 </body>
